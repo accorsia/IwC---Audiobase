@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Audiobase/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audiobase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/models.py" afterDir="false" />
+    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="3rd: admin + artist html">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audiobase/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,8 +84,16 @@
       <option name="presentableId" value="Default" />
       <updated>1685807212987</updated>
       <workItem from="1685807214255" duration="11280000" />
-      <workItem from="1685872744453" duration="8097000" />
+      <workItem from="1685872744453" duration="12337000" />
     </task>
+    <task id="LOCAL-00001" summary="3rd: admin + artist html">
+      <created>1685886871357</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685886871357</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +109,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="3rd: admin + artist html" />
+    <option name="LAST_COMMIT_MESSAGE" value="3rd: admin + artist html" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

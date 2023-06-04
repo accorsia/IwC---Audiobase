@@ -2,23 +2,106 @@
 <html>
 <head>
     <title>Overview Album</title>
+    <style>
+        body {
+            font-family: Candara, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .album-info {
+            margin: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #00008BFF;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        p {
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .song-list {
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #000000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #000;
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 0;
+        }
+
+        .song-box {
+            margin: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+
+        .song-box h1 {
+            color: #800000;
+            font-size: 24px;
+        }
+
+        .no-songs {
+            color: #999;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <h1>Panoramica Album</h1>
-    <h2>{{ album.bname }}</h2>
-    <p><strong>Artista:</strong> {{ album.ida.stagename }}</p>
-    <p><strong>Anno:</strong> {{ album.year }}</p>
-    <p><strong>Genere:</strong> {{ album.genre }}</p>
-    <p><strong>Album d'oro:</strong> {% if album.gold %}Sì{% else %}No{% endif %}</p>
-    <p><strong>Album di platino:</strong> {% if album.plat %}Sì{% else %}No{% endif %}</p>
+    <div class="album-info">
+        <h1>{{ album.bname }}</h1>
+        <p><strong>Artista:</strong> {{ album.ida }}</p>
+        <p><strong>Anno:</strong> {{ album.year }}</p>
+        <p><strong>Genere:</strong> {{ album.genre }}</p>
+        <p><strong>Album d'oro:</strong> {% if gold %}Sì{% else %}No{% endif %}</p>
+        <p><strong>Album di platino:</strong> {% if plat %}Sì{% else %}No{% endif %}</p>
+    </div>
 
-    <h2>Canzoni dell'album</h2>
-    <ul>
-        {% for song in album.song_set.all %}
-            <li>{{ song.sname }} - {{ song.length }} secondi</li>
-        {% empty %}
-            <li>Nessuna canzone disponibile</li>
-        {% endfor %}
-    </ul>
+    <div class="song-list">
+        <h2 style="font-size: 36px;">Song List</h2>
+        <ul>
+            {% for song in songs %}
+            <li>
+                <div class="song-box">
+                    <h1>{{ song.sname }}</h1>
+                    <ul>
+                        <li><strong>Artista:</strong> {{ song.artist_name }}</li>
+                        <li><strong>Album:</strong> {{ song.album_name }}</li>
+                        <li><strong>Anno di uscita:</strong> {{ song.pubdate }}</li>
+                        <li><strong>Durata:</strong> {{ song.length }} secondi</li>
+                        <li><strong>Stream su Spotify:</strong> {{ song.spoty_str }}</li>
+                    </ul>
+                </div>
+            </li>
+            {% empty %}
+            <li class="no-songs">Nessuna canzone disponibile</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

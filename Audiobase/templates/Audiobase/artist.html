@@ -10,48 +10,51 @@
 
         .artist-info {
             margin: 20px;
-            background-color: #fff;
+            background-color: #f0f0f0;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            color: #333;
-            font-size: 24px;
+            color: #8b0000;
+            font-size: 40px;
             font-weight: bold;
             margin-top: 0;
         }
 
         p {
-            color: #666;
-            font-size: 16px;
+            color: #000;
+            font-size: 24px;
             margin-bottom: 10px;
         }
 
         .album-list {
             margin: 20px;
-            background-color: #fff;
+            background-color: #f8f8f8;
+            color: #000000;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #333;
-            font-size: 20px;
+            color: #000;
+            font-size: 28px;
             font-weight: bold;
             margin-top: 0;
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         li {
-            color: #333;
-            font-size: 16px;
+            color: #000;
+            font-size: 24px;
             margin-bottom: 5px;
         }
 
@@ -61,8 +64,9 @@
         }
 
         .artist-image {
-            width: 200px;
-            height: 200px;
+            float: left;
+            width: 300px;
+            height: 400px;
             border-radius: 50%;
             overflow: hidden;
         }
@@ -77,22 +81,24 @@
 <body>
     <div class="artist-info">
         <div class="artist-image">
-            <img src="/media/artist_img/a{{ ida }}.jpg" alt="Immagine Artista">
+            <img src="/media/artist_img/a{{ artist.ida }}.jpg" alt="Immagine Artista">
         </div>
-        <h1>{{ stagename }}</h1>
-        <p><strong>Nome:</strong> {{ aname }}</p>
-        <p><strong>Data di nascita:</strong> {{ birth }}</p>
-        <p><strong>Età:</strong> {{ age }}</p>
-        <p><strong>Nazione:</strong> {{ nation }}</p>
-        <p><strong>Album d'oro:</strong> {{ n_gold }}</p>
-        <p><strong>Album di platino:</strong> {{ n_plat }}</p>
+        <div style="margin-left: 320px;">
+            <h1 style="color: #8b0000;">{{ artist.stagename }}</h1>
+            <p><strong>Nome:</strong> {{ artist.aname }}</p>
+            <p><strong>Data di nascita:</strong> {{ artist.birth }}</p>
+            <p><strong>Età:</strong> {{ artist.age }}</p>
+            <p><strong>Nazione:</strong> {{ artist.nation }}</p>
+            <p><strong>Album d'oro:</strong> {{ artist.n_gold }}</p>
+            <p><strong>Album di platino:</strong> {{ artist.n_plat }}</p>
+        </div>
     </div>
 
     <div class="album-list">
         <h2>Album dell'artista</h2>
         <ul>
             {% for album in albums %}
-                <li>{{ album.bname }} - {{ album.year }}</li>
+                <li><a href="{% url 'album_bio' album.idb %}">{{ album.bname }}</a> (Anno: {{ album.year }})</li>
             {% empty %}
                 <li class="no-albums">Nessun album disponibile</li>
             {% endfor %}
