@@ -1,0 +1,101 @@
+from datetime import date
+from django.db import models
+
+
+#   'a' ---> Artist
+class Artist(models.Model):
+    ida = models.AutoField(primary_key=True)  # primary key
+
+    aname = models.CharField(max_length=100, verbose_name="Name")
+    stagename = models.CharField(max_length=100, verbose_name="Stage name")
+    birth = models.DateField("Birth")
+    age = models.IntegerField(default=0)    # read only
+    n_gold = models.IntegerField(default=0, verbose_name="Gold records")  # read only
+    n_plat = models.IntegerField(default=0, verbose_name="Platinum records")  # read only
+    nation = models.CharField(max_length=100, verbose_name="Nationality")
+
+    #   [str] that shows in the dropdown menu
+    def __str__(self):
+        return str(self.stagename)
+
+    def __repr__(self):
+        return f"Artist(ida={self.ida}, aname='{self.aname}', stagename='{self.stagename}', birth={self.birth}, age={self.age}, n_gold={self.n_gold}, n_plat={self.n_plat}, nation='{self.nation}')"
+
+    ####################################################################################################################
+
+    def calculate_certifications(self):
+        artist_albums = Album.objects.filter(ida=self)
+
+        self.gold = artist_albums.filter(gold=True).count()
+        self.plat = artist_albums.filter(plat=True).count()
+
+    #   Override ---> calculate read only fields
+    def save(self, *args, **kwargs):
+        self.calculate_certifications()
+        self.age = date.today().year - self.birth.year
+
+        super().save(*args, **kwargs)
+
+
+#   'b' ---> Album
+class Album(models.Model):
+    idb = models.AutoField(primary_key=True)  # primary key
+
+    ida = models.ForeignKey(Artist, on_delete=models.CASCADE)  # foreign key
+    artist_name = models.CharField(max_length=100, verbose_name="Artist", default="Artist name will appear here...")    # read only
+    bname = models.CharField(max_length=100, verbose_name="Name")
+    year = models.IntegerField(verbose_name="Release year")
+    genre = models.CharField(max_length=100)
+    gold = models.BooleanField(verbose_name="Gold record")
+    plat = models.BooleanField(verbose_name="Platinum record")
+
+    def __str__(self):
+        return self.bname
+
+    ####################################################################################################################
+
+    #   Override --> calculate: 'artist_name', 'ida'
+    def save(self, *args, **kwargs):
+        #   artist_name
+        artist = Artist.objects.get(ida=self.ida_id)
+        self.artist_name = artist.stagename
+
+        #   ida
+        self.ida_id = artist.ida
+
+        super().save(*args, **kwargs)
+
+#   's' ---> Song
+class Song(models.Model):
+    ids = models.AutoField(primary_key=True)  # primary key
+
+    idb = models.ForeignKey(Album, on_delete=models.CASCADE)  # foreign key
+    sname = models.CharField(max_length=100, verbose_name="Name")
+    artist_name = models.CharField(max_length=100, verbose_name="Artist", default="Artist name will appear here...")    # read only
+    album_name = models.CharField(max_length=100, verbose_name="Album", default="Album name will appear here...")   # read only
+    pubdate = models.IntegerField(verbose_name="Release year", default=0)   # read only
+    length = models.IntegerField(verbose_name="Length in [seconds]")
+    spoty_str = models.IntegerField(verbose_name="Thousands of streams [x1000]")
+
+    def __str__(self):
+        return self.sname
+
+    ####################################################################################################################
+
+    #   Override --> calculate: 'album_name', 'pubdate', 'artist_name'
+    def save(self, *args, **kwargs):
+        #   album_name, pubdate
+        album = Album.objects.get(idb=self.idb_id)
+        self.album_name = album.bname
+        self.pubdate = album.year
+
+        #   artist_name
+        artist = Artist.objects.get(ida=album.ida_id)
+        self.artist_name = artist.stagename
+
+        #   idb       ///   NON SI SA PERCHE FUNZIONI   ///
+        self.idb = album
+
+        super().save(*args, **kwargs)
+
+    #   todo:   ---- MENU A TENDINA PER SCEGLIERE L'ALBUM + VERIFICA ALBUM-ARTIST

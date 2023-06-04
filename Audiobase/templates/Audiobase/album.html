@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overview Album</title>
+</head>
+<body>
+    <h1>Panoramica Album</h1>
+    <h2>{{ album.bname }}</h2>
+    <p><strong>Artista:</strong> {{ album.ida.stagename }}</p>
+    <p><strong>Anno:</strong> {{ album.year }}</p>
+    <p><strong>Genere:</strong> {{ album.genre }}</p>
+    <p><strong>Album d'oro:</strong> {% if album.gold %}Sì{% else %}No{% endif %}</p>
+    <p><strong>Album di platino:</strong> {% if album.plat %}Sì{% else %}No{% endif %}</p>
+
+    <h2>Canzoni dell'album</h2>
+    <ul>
+        {% for song in album.song_set.all %}
+            <li>{{ song.sname }} - {{ song.length }} secondi</li>
+        {% empty %}
+            <li>Nessuna canzone disponibile</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

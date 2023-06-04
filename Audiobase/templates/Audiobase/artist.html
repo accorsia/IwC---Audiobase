@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overview Artista</title>
+</head>
+<body>
+    <h1>Panoramica Artista</h1>
+    <h2>{{ artist.stagename }}</h2>
+    <p><strong>Nome:</strong> {{ artist.aname }}</p>
+    <p><strong>Data di nascita:</strong> {{ artist.birth }}</p>
+    <p><strong>Età:</strong> {{ artist.age }}</p>
+    <p><strong>Nazione:</strong> {{ artist.nation }}</p>
+    <p><strong>Album d'oro:</strong> {{ artist.ngold }}</p>
+    <p><strong>Album di platino:</strong> {{ artist.nplat }}</p>
+
+    <h2>Album dell'artista</h2>
+    <ul>
+        {% for album in artist.album_set.all %}
+            <li>{{ album.bname }} - {{ album.year }}</li>
+        {% empty %}
+            <li>Nessun album disponibile</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audiobase - Presentazione</title>
+</head>
+<body>
+    <h1>Benvenuti in Audiobase</h1>
+    <p>Questo è un progetto che si occupa di gestire dati relativi ad artisti, album e canzoni.</p>
+
+    <h2>Artisti</h2>
+    <p>Nel database sono presenti i seguenti artisti:</p>
+    <ul>
+        {% for artist in artists %}
+            <li>{{ artist.stagename }}</li>
+        {% empty %}
+            <li>Nessun artista disponibile</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Album</h2>
+    <p>Nel database sono presenti i seguenti album:</p>
+    <ul>
+        {% for album in albums %}
+            <li>{{ album.bname }} di {{ album.ida.stagename }}</li>
+        {% empty %}
+            <li>Nessun album disponibile</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
