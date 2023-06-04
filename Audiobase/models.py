@@ -14,6 +14,9 @@ class Artist(models.Model):
     n_plat = models.IntegerField(default=0, verbose_name="Platinum records")  # read only
     nation = models.CharField(max_length=100, verbose_name="Nationality")
 
+    artist_image = models.ImageField(null=True, blank=True, upload_to="artist_img/")    # profile pic
+    show_ida = models.IntegerField(verbose_name="Ida", null=True, default=1)
+
     #   [str] that shows in the dropdown menu
     def __str__(self):
         return str(self.stagename)
@@ -34,6 +37,11 @@ class Artist(models.Model):
         self.calculate_certifications()
         self.age = date.today().year - self.birth.year
 
+        if self.ida is not None:
+            self.show_ida = self.ida
+        else:
+            self.show_ida = -1
+
         super().save(*args, **kwargs)
 
 
@@ -41,7 +49,7 @@ class Artist(models.Model):
 class Album(models.Model):
     idb = models.AutoField(primary_key=True)  # primary key
 
-    ida = models.ForeignKey(Artist, on_delete=models.CASCADE)  # foreign key
+    ida = models.ForeignKey(Artist, on_delete=models.CASCADE)  # foreign key, read only
     artist_name = models.CharField(max_length=100, verbose_name="Artist", default="Artist name will appear here...")    # read only
     bname = models.CharField(max_length=100, verbose_name="Name")
     year = models.IntegerField(verbose_name="Release year")
@@ -61,7 +69,9 @@ class Album(models.Model):
         self.artist_name = artist.stagename
 
         #   ida
-        self.ida_id = artist.ida
+        self.ida = artist
+        #   ...OPPURE...
+        #   self.ida_id = artist.ida
 
         super().save(*args, **kwargs)
 
@@ -93,9 +103,8 @@ class Song(models.Model):
         artist = Artist.objects.get(ida=album.ida_id)
         self.artist_name = artist.stagename
 
-        #   idb       ///   NON SI SA PERCHE FUNZIONI   ///
+        #   idb
         self.idb = album
 
         super().save(*args, **kwargs)
 
-    #   todo:   ---- MENU A TENDINA PER SCEGLIERE L'ALBUM + VERIFICA ALBUM-ARTIST

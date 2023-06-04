@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Artist, Album
 
+
 def artist_to_dict(artist):
     artist_dict = {
         'ida': artist.ida,
@@ -11,8 +12,13 @@ def artist_to_dict(artist):
         'n_gold': artist.n_gold,
         'n_plat': artist.n_plat,
         'nation': artist.nation,
+
+        'albums': artist.album_set.all()  # artist's album list
+
     }
     return artist_dict
+
+
 def album_to_dict(album):
     album_dict = {
         'idb': album.idb,
@@ -31,7 +37,6 @@ def index(request):
     artists = Artist.objects.all()
     albums = Album.objects.all()
     return render(request, 'Audiobase/index.html', {'artists': artists, 'albums': albums})
-
 
 
 def artist_bio(request, artist_id):

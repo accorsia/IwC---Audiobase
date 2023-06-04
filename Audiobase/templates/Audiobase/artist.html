@@ -2,24 +2,101 @@
 <html>
 <head>
     <title>Overview Artista</title>
+    <style>
+        body {
+            font-family: Candara, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .artist-info {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .album-list {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .no-albums {
+            color: #999;
+            font-style: italic;
+        }
+
+        .artist-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .artist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-    <h1>Panoramica Artista</h1>
-    <h2>{{ artist.stagename }}</h2>
-    <p><strong>Nome:</strong> {{ artist.aname }}</p>
-    <p><strong>Data di nascita:</strong> {{ artist.birth }}</p>
-    <p><strong>Età:</strong> {{ artist.age }}</p>
-    <p><strong>Nazione:</strong> {{ artist.nation }}</p>
-    <p><strong>Album d'oro:</strong> {{ artist.ngold }}</p>
-    <p><strong>Album di platino:</strong> {{ artist.nplat }}</p>
+    <div class="artist-info">
+        <div class="artist-image">
+            <img src="/media/artist_img/a{{ ida }}.jpg" alt="Immagine Artista">
+        </div>
+        <h1>{{ stagename }}</h1>
+        <p><strong>Nome:</strong> {{ aname }}</p>
+        <p><strong>Data di nascita:</strong> {{ birth }}</p>
+        <p><strong>Età:</strong> {{ age }}</p>
+        <p><strong>Nazione:</strong> {{ nation }}</p>
+        <p><strong>Album d'oro:</strong> {{ n_gold }}</p>
+        <p><strong>Album di platino:</strong> {{ n_plat }}</p>
+    </div>
 
-    <h2>Album dell'artista</h2>
-    <ul>
-        {% for album in artist.album_set.all %}
-            <li>{{ album.bname }} - {{ album.year }}</li>
-        {% empty %}
-            <li>Nessun album disponibile</li>
-        {% endfor %}
-    </ul>
+    <div class="album-list">
+        <h2>Album dell'artista</h2>
+        <ul>
+            {% for album in albums %}
+                <li>{{ album.bname }} - {{ album.year }}</li>
+            {% empty %}
+                <li class="no-albums">Nessun album disponibile</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
