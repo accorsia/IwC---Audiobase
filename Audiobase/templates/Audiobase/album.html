@@ -3,52 +3,30 @@
 <head>
     <title>Dettagli Album</title>
     <style>
-        a {
-            color: #00008BFF;
-            text-decoration: none;
-            border-bottom: none;
-        }
-
-        body {
-            font-family: Candara, Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
 
         .album-info {
             margin: 20px;
             background-color: #f0f0f0;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .album-image {
-            width: 300px;
-            height: 400px;
+            float: left;
+            width: 350px;
+            height: 450px;
             border-radius: 50%;
             overflow: hidden;
+            border: 2px solid #000;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
             margin-right: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         }
 
         .album-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        h1 {
-            color: #8b0000;
-            font-size: 40px;
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        p {
-            margin-bottom: 10px;
-            font-size: 24px;
         }
 
         .song-list {
@@ -58,20 +36,6 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            color: #000;
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        ul {
-            list-style-type: none;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-left: 0;
         }
 
         .song-box {
@@ -93,29 +57,69 @@
             font-style: italic;
         }
 
+        body {
+            font-family: Candara, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        a {
+            color: #00008BFF;
+            text-decoration: none;
+            border-bottom: none;
+        }
+
+        h1 {
+            color: #8b0000;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #000;
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 0;
+        }
+
+
     </style>
 </head>
 <body>
-    <div class="album-info">
-        <!-- Album art -->
-        <div class="album-image">
-            <img src="/media/album_img/a_{{ album.idb }}_{{ path_bname }}.jpg" alt="album cover">
-        </div>
-
-        <div>
-            <h1>{{ album.title }}</h1>
-            <p><strong>Artista:</strong> {{ album.artist }}</p>
-            <p><strong>Anno:</strong> {{ album.year }}</p>
-            <p><strong>Genere:</strong> {{ album.genre }}</p>
-            <p><strong>Album d'oro:</strong> {% if gold %}Sì{% else %}No{% endif %}</p>
-            <p><strong>Album di platino:</strong> {% if plat %}Sì{% else %}No{% endif %}</p>
-        </div>
+<div class="album-info">
+    <!-- Album art -->
+    <div class="album-image">
+        <img src="/media/album_img/a_{{ album.idb }}_{{ path_bname }}.jpg" alt="album cover">
     </div>
 
-    <div class="song-list">
-        <h2 style="font-size: 36px;">Lista delle Canzoni</h2>
-        <ul>
-            {% for song in songs %}
+    <!-- Album info -->
+    <div style="margin-left: 370px;">
+        <h1 style="color: #8b0000;">{{ album.bname }}</h1>
+        <p><strong>Artista:</strong> {{ album.ida.stagename }}</p>
+        <p><strong>Anno:</strong> {{ album.year }}</p>
+        <p><strong>Genere:</strong> {{ album.genre }}</p>
+        <p><strong>Album d'oro:</strong> {% if gold %}Sì{% else %}No{% endif %}</p>
+        <p><strong>Album di platino:</strong> {% if plat %}Sì{% else %}No{% endif %}</p>
+    </div>
+
+</div>
+
+<div class="song-list">
+    <h2 style="font-size: 36px;">Lista delle Canzoni</h2>
+    <ul>
+        {% for song in songs %}
             <li>
                 <div class="song-box">
                     <h1>{{ song.sname }}</h1>
@@ -128,10 +132,10 @@
                     </ul>
                 </div>
             </li>
-            {% empty %}
+        {% empty %}
             <li class="no-songs">Nessuna canzone disponibile</li>
-            {% endfor %}
-        </ul>
-    </div>
+        {% endfor %}
+    </ul>
+</div>
 </body>
 </html>
