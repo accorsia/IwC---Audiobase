@@ -2,6 +2,56 @@
 <html>
 <head>
     <title>Audiobase - Presentazione</title>
+    <style>
+        a {
+            color: #00008BFF;
+            text-decoration: none;
+            border-bottom: none;
+        }
+
+        body {
+            font-family: Candara, Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #00008BFF;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #000;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #000;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        li {
+            color: #000;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .no-data {
+            color: #999;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <h1>Benvenuti in Audiobase</h1>
@@ -11,9 +61,9 @@
     <p>Nel database sono presenti i seguenti artisti:</p>
     <ul>
         {% for artist in artists %}
-            <li>{{ artist.stagename }}</li>
+            <li><a href="/ab/artists/{{ artist.ida }}">{{ artist.stagename }}</a></li>
         {% empty %}
-            <li>Nessun artista disponibile</li>
+            <li class="no-data">Nessun artista disponibile</li>
         {% endfor %}
     </ul>
 
@@ -21,9 +71,9 @@
     <p>Nel database sono presenti i seguenti album:</p>
     <ul>
         {% for album in albums %}
-            <li>{{ album.bname }} di {{ album.ida.stagename }}</li>
+            <li><a href="/ab/albums/{{ album.idb }}">{{ album.bname }}</a> di {{ album.ida.stagename }}</li>
         {% empty %}
-            <li>Nessun album disponibile</li>
+            <li class="no-data">Nessun album disponibile</li>
         {% endfor %}
     </ul>
 </body>

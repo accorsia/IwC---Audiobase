@@ -1,6 +1,6 @@
+import os
 from datetime import date
 from django.db import models
-
 
 #   'a' ---> Artist
 class Artist(models.Model):
@@ -15,7 +15,7 @@ class Artist(models.Model):
     nation = models.CharField(max_length=100, verbose_name="Nationality")
 
     artist_image = models.ImageField(null=True, blank=True, upload_to="artist_img/")    # profile pic
-    show_ida = models.IntegerField(verbose_name="Ida", null=True, default=1)
+    show_ida = models.IntegerField(verbose_name="Ida", null=True, default=-1)
 
     #   [str] that shows in the dropdown menu
     def __str__(self):
@@ -23,6 +23,7 @@ class Artist(models.Model):
 
     def __repr__(self):
         return f"Artist(ida={self.ida}, aname='{self.aname}', stagename='{self.stagename}', birth={self.birth}, age={self.age}, n_gold={self.n_gold}, n_plat={self.n_plat}, nation='{self.nation}')"
+
 
     ####################################################################################################################
 
@@ -57,6 +58,9 @@ class Album(models.Model):
     gold = models.BooleanField(verbose_name="Gold record")
     plat = models.BooleanField(verbose_name="Platinum record")
 
+    album_image = models.ImageField(null=True, blank=True, upload_to="album_img/")  # album cover
+    show_idb = models.IntegerField(verbose_name="Idb", null=True, default=-1)
+
     def __str__(self):
         return self.bname
 
@@ -72,6 +76,11 @@ class Album(models.Model):
         self.ida = artist
         #   ...OPPURE...
         #   self.ida_id = artist.ida
+
+        if self.idb is not None:
+            self.show_idb = self.idb
+        else:
+            self.show_idb = -1
 
         super().save(*args, **kwargs)
 
