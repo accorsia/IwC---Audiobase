@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="5th: completed html">
+    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="6th: artist = album (html)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/album_img/3241ca49-d4e3-4536-b32c-2dc5483b5fa1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/album_img/a_15_culturei.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,7 @@
       <updated>1685807212987</updated>
       <workItem from="1685807214255" duration="11280000" />
       <workItem from="1685872744453" duration="14254000" />
-      <workItem from="1686121369628" duration="14646000" />
+      <workItem from="1686121369628" duration="15696000" />
     </task>
     <task id="LOCAL-00001" summary="3rd: admin + artist html">
       <created>1685886871357</created>
@@ -106,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686154199073</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="6th: artist = album (html)">
+      <created>1686176120448</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686176120448</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +137,8 @@
     <MESSAGE value="3rd: admin + artist html" />
     <MESSAGE value="4th: both html" />
     <MESSAGE value="5th: completed html" />
-    <option name="LAST_COMMIT_MESSAGE" value="5th: completed html" />
+    <MESSAGE value="6th: artist = album (html)" />
+    <option name="LAST_COMMIT_MESSAGE" value="6th: artist = album (html)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
