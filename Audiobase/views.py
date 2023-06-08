@@ -43,7 +43,14 @@ def index(request):
     except Album.DoesNotExist:
         raise Http404("Nessun album disponibile")
 
-    return render(request, 'Audiobase/index.html', {'artists': artists_obj, 'albums': albums_obj})
+    context = {
+        'artists': artists_obj,
+        'albums': albums_obj
+        #'artist_img_path': artists_obj.stagename.replace(" ", "").lower(),
+        #'album_img_path':  albums_obj.stagename.replace(" ", "").lower()
+    }
+
+    return render(request, 'Audiobase/index.html', context)
 
 
 def artist_bio(request, artist_id):

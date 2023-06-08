@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Audiobase.apps.AudiobaseConfig',
+    'Audiobase.templatetags.custom_filters'
+    #'bootstrap4'
 ]
 
 MIDDLEWARE = [

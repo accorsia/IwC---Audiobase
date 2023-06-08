@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="6th: artist = album (html)">
+    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="7: full db">
+      <change afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index_carousel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Audiobase/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Audiobase/templatetags/custom_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/album_img/3241ca49-d4e3-4536-b32c-2dc5483b5fa1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/album_img/a_15_culturei.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/album_img/R-14343033-1572616775-2323.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +22,13 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +58,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aless\Desktop\UNI\Lezioni\2\B\Internet Web e Cloud\Project\Audiobase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aless\Desktop\UNI\Lezioni\2\B\Internet Web e Cloud\Project\Audiobase\templatetags" />
     </key>
   </component>
   <component name="RunManager">
@@ -86,7 +99,7 @@
       <updated>1685807212987</updated>
       <workItem from="1685807214255" duration="11280000" />
       <workItem from="1685872744453" duration="14254000" />
-      <workItem from="1686121369628" duration="15696000" />
+      <workItem from="1686121369628" duration="22102000" />
     </task>
     <task id="LOCAL-00001" summary="3rd: admin + artist html">
       <created>1685886871357</created>
@@ -116,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686176120448</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="7: full db">
+      <created>1686177017679</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686177017679</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +158,8 @@
     <MESSAGE value="4th: both html" />
     <MESSAGE value="5th: completed html" />
     <MESSAGE value="6th: artist = album (html)" />
-    <option name="LAST_COMMIT_MESSAGE" value="6th: artist = album (html)" />
+    <MESSAGE value="7: full db" />
+    <option name="LAST_COMMIT_MESSAGE" value="7: full db" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
