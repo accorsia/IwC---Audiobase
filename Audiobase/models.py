@@ -17,6 +17,7 @@ class Artist(models.Model):
     artist_image = models.ImageField(null=True, blank=True, upload_to="artist_img/")    # profile pic
     show_ida = models.IntegerField(verbose_name="Ida", null=True, default=-1)
 
+
     #   [str] that shows in the dropdown menu
     def __str__(self):
         return str(self.stagename)

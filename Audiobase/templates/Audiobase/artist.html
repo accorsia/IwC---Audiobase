@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Overview Artista</title>
     <style>
@@ -92,12 +93,14 @@
 
     </style>
 </head>
+
 <body>
+
+<!-- TOP BOX: artist info -->
 <div class="artist-info">
 
     <!-- Artist profile pic -->
     <div class="artist-image">
-        <!-- image path -->
         <img src="/media/artist_img/a{{ artist.ida }}_{{ path_stagename }}.jpg" alt="artist profile pic">
     </div>
 
@@ -111,11 +114,13 @@
         <p><strong>Album d'oro:</strong> {{ artist.n_gold }}</p>
         <p><strong>Album di platino:</strong> {{ artist.n_plat }}</p>
     </div>
+
 </div>
 
-<!-- album list with href -->
+<!-- BOTTOM BOX: album list -->
 <div class="album-list">
     <h2>Album dell'artista</h2>
+
     <ul>
         {% for album in albums %}
             <li><a href="{% url 'album_bio' album.idb %}">{{ album.bname }}</a> ({{ album.year }})</li>
@@ -123,6 +128,8 @@
             <li class="no-albums">Nessun album disponibile</li>
         {% endfor %}
     </ul>
+
 </div>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Dettagli Album</title>
     <style>
@@ -97,8 +98,11 @@
 
     </style>
 </head>
+
 <body>
+<!-- TOP BOX: album info -->
 <div class="album-info">
+
     <!-- Album art -->
     <div class="album-image">
         <!-- image path -->
@@ -117,8 +121,10 @@
 
 </div>
 
+<!-- BOTTOM BOX: song list -->
 <div class="song-list">
     <h2 style="font-size: 36px;">Lista delle Canzoni</h2>
+
     <ul>
         {% for song in songs %}
             <li>
@@ -133,10 +139,14 @@
                     </ul>
                 </div>
             </li>
+
+        <!-- no songs available -->
         {% empty %}
             <li class="no-songs">Nessuna canzone disponibile</li>
         {% endfor %}
     </ul>
+
 </div>
+
 </body>
 </html>
