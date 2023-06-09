@@ -18,14 +18,14 @@ class ArtistAdmin(admin.ModelAdmin):
 
 
 class AlbumAdmin(admin.ModelAdmin):
-    readonly_fields = ('artist_name', 'show_idb')
+    readonly_fields = ('artist_name', 'show_idb', 'best_album')
 
     fieldsets = (
         ('Input', {
             'fields': ('ida', 'bname', 'year', 'genre', 'gold', 'plat', 'album_image'),
         }),
         ('ReadOnly', {
-            'fields': ('artist_name', 'show_idb'),
+            'fields': ('artist_name', 'show_idb', 'best_album'),
             #'classes': ('collapse',),
         }),
     )

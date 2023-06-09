@@ -83,12 +83,13 @@ def album_bio(request, album_id):
                }
     return render(request, 'Audiobase/album.html', context)
 
-def vote_album(request, artist_id):
-    artist = get_object_or_404(Artist, id=artist_id)
+def vote_album(request, album_id):
+
     if request.method == 'POST':
-        album_id = request.POST.get('best_album')
-        if album_id:
-            album = get_object_or_404(Album, id=album_id)
-            artist.best_album = album
-            artist.save()
-    return HttpResponseRedirect(reverse('ab:artist_bio', args=[artist_ida]))
+        selected_album_bname = request.POST.get('best_album')
+        #selected_album_idb = Album.objects.get(bname=selected_album_bname)
+        selected_album = get_object_or_404(Album, idb=album_id)
+
+        selected_album.best_album += 1
+        selected_album.save()
+    return HttpResponseRedirect(reverse('ab:album_bio', args=get_object_or_404(Album, idb=album_id).idb))

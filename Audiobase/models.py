@@ -59,6 +59,8 @@ class Album(models.Model):
     gold = models.BooleanField(verbose_name="Gold record")
     plat = models.BooleanField(verbose_name="Platinum record")
 
+    best_album = models.IntegerField(verbose_name="Votes as artist's best album", default=0)
+
     album_image = models.ImageField(null=True, blank=True, upload_to="album_img/")  # album cover
     show_idb = models.IntegerField(verbose_name="Idb", null=True, default=-1)
 

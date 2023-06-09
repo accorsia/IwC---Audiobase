@@ -154,22 +154,49 @@
 
 <!-- poll -->
 <div class="poll-box">
-    <form method="POST" action="{% url 'ab:vote_album' artist.ida %}">
+    <!-- <form method="POST" > -->
+
+    <form method="POST" action = "{ % url 'ab:vote_album' album.idb %}>
+
     {% csrf_token %}
+
         <label for="best_album">Miglior album:</label>
 
         <select name="best_album" id="best_album">
             <option value="">Seleziona l'album migliore</option>
 
             {% for album in albums %}
-            <option value="{{ album.ida }}">{{ album.bname }}</option>
+                <option value="{{ album.idb }}">{{ album.bname }}</option>
             {% endfor %}
 
         </select>
 
         <input type="submit" value="Vota">
     </form>
+
+    <script>
+        document.getElementById("best_album").addEventListener("change", function () {
+            var selectedAlbumId = document.getElementById("best_album").value;
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'ab:vote_album' album_id=0 %}".replace("0", selectedAlbumId),
+                success: function () {
+                    // Azioni da eseguire in caso di successo
+                    alert("Voto registrato!");
+                },
+                error: function () {
+                    // Azioni da eseguire in caso di errore
+                    alert("Si è verificato un errore durante il voto.");
+                }
+            });
+        });
+    </script>
 </div>
+
+
+
+
 
 <!-- BOTTOM BOX: album list -->
 <div class="album-list">
