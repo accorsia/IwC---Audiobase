@@ -38,6 +38,41 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .poll-box {
+            margin-top: 20px;
+            background-color: #f8f8f8;
+            color: #000000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .poll-box label {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .poll-box select {
+            width: 100%;
+            font-size: 18px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .poll-box input[type="submit"] {
+            background-color: #00008BFF;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .poll-box input[type="submit"]:hover {
+            background-color: #00008B;
+        }
 
         a {
             color: #00008BFF;
@@ -49,7 +84,6 @@
             font-family: Candara, Arial, sans-serif;
             background-color: #f5f5f5;
         }
-
 
         h1 {
             color: #8b0000;
@@ -63,7 +97,6 @@
             font-size: 24px;
             margin-bottom: 10px;
         }
-
 
         h2 {
             color: #000;
@@ -99,12 +132,12 @@
 <!-- TOP BOX: artist info -->
 <div class="artist-info">
 
-    <!-- Artist profile pic -->
+    <!-- profile pic -->
     <div class="artist-image">
         <img src="/media/artist_img/a{{ artist.ida }}_{{ path_stagename }}.jpg" alt="artist profile pic">
     </div>
 
-    <!-- Artist profile pic -->
+    <!-- datas -->
     <div style="margin-left: 370px;">
         <h1 style="color: #8b0000;">{{ artist.stagename }}</h1>
         <p><strong>Nome:</strong> {{ artist.aname }}</p>
@@ -115,6 +148,27 @@
         <p><strong>Album di platino:</strong> {{ artist.n_plat }}</p>
     </div>
 
+
+
+</div>
+
+<!-- poll -->
+<div class="poll-box">
+    <form method="POST" action="{% url 'ab:vote_album' artist.ida %}">
+    {% csrf_token %}
+        <label for="best_album">Miglior album:</label>
+
+        <select name="best_album" id="best_album">
+            <option value="">Seleziona l'album migliore</option>
+
+            {% for album in albums %}
+            <option value="{{ album.ida }}">{{ album.bname }}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="submit" value="Vota">
+    </form>
 </div>
 
 <!-- BOTTOM BOX: album list -->
@@ -123,9 +177,9 @@
 
     <ul>
         {% for album in albums %}
-            <li><a href="{% url 'album_bio' album.idb %}">{{ album.bname }}</a> ({{ album.year }})</li>
+        <li><a href="{% url 'ab:album_bio' album.idb %}">{{ album.bname }}</a> ({{ album.year }})</li>
         {% empty %}
-            <li class="no-albums">Nessun album disponibile</li>
+        <li class="no-albums">Nessun album disponibile</li>
         {% endfor %}
     </ul>
 

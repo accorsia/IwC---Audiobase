@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="7: full db">
+    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="8: html formatting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audiobase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <workItem from="1685807214255" duration="11280000" />
       <workItem from="1685872744453" duration="14254000" />
       <workItem from="1686121369628" duration="22102000" />
-      <workItem from="1686269720225" duration="1221000" />
+      <workItem from="1686269720225" duration="2434000" />
     </task>
     <task id="LOCAL-00001" summary="3rd: admin + artist html">
       <created>1685886871357</created>
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686177017679</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="8: html formatting">
+      <created>1686271353216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686271353216</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +162,8 @@
     <MESSAGE value="5th: completed html" />
     <MESSAGE value="6th: artist = album (html)" />
     <MESSAGE value="7: full db" />
-    <option name="LAST_COMMIT_MESSAGE" value="7: full db" />
+    <MESSAGE value="8: html formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="8: html formatting" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

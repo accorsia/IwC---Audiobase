@@ -1,5 +1,7 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
+
 from .models import Artist, Album
 
 
@@ -80,3 +82,13 @@ def album_bio(request, album_id):
                'path_bname': album_obj.bname.replace(" ", "").lower()   #   album images path in the folder
                }
     return render(request, 'Audiobase/album.html', context)
+
+def vote_album(request, artist_id):
+    artist = get_object_or_404(Artist, id=artist_id)
+    if request.method == 'POST':
+        album_id = request.POST.get('best_album')
+        if album_id:
+            album = get_object_or_404(Album, id=album_id)
+            artist.best_album = album
+            artist.save()
+    return HttpResponseRedirect(reverse('ab:artist_bio', args=[artist_ida]))
