@@ -28,16 +28,19 @@ class Artist(models.Model):
 
     ####################################################################################################################
 
-    def calculate_certifications(self):
+    def update(self):
+        #   Calculate certifications
         artist_albums = Album.objects.filter(ida=self)
 
-        self.gold = artist_albums.filter(gold=True).count()
-        self.plat = artist_albums.filter(plat=True).count()
+        self.n_gold = artist_albums.filter(gold=True).count()
+        self.n_plat = artist_albums.filter(plat=True).count()
+
+        #   Age
+        self.age = date.today().year - self.birth.year
 
     #   Override ---> calculate read only fields
     def save(self, *args, **kwargs):
-        self.calculate_certifications()
-        self.age = date.today().year - self.birth.year
+        self.update()
 
         if self.ida is not None:
             self.show_ida = self.ida

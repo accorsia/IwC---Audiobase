@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+{% load custom_filters %}
+
 <head>
     <title>Dettagli Album</title>
     <style>
@@ -106,7 +108,7 @@
     <!-- Album art -->
     <div class="album-image">
         <!-- image path -->
-        <img src="/media/album_img/b_{{ album.idb }}_{{ path_bname }}.jpg" alt="album cover">
+        <img src="/media/album_img/b_{{ album.idb }}_{{ album.bname|convert_to_path }}.jpg" alt="album cover">
     </div>
 
     <!-- Album info -->
@@ -115,8 +117,8 @@
         <p><strong>Artista:</strong> {{ album.ida.stagename }}</p>
         <p><strong>Anno:</strong> {{ album.year }}</p>
         <p><strong>Genere:</strong> {{ album.genre }}</p>
-        <p><strong>Album d'oro:</strong> {% if gold %}Sì{% else %}No{% endif %}</p>
-        <p><strong>Album di platino:</strong> {% if plat %}Sì{% else %}No{% endif %}</p>
+        <p><strong>Album d'oro:</strong> {% if album.gold %}Sì{% else %}No{% endif %}</p>
+        <p><strong>Album di platino:</strong> {% if album.plat %}Sì{% else %}No{% endif %}</p>
     </div>
 
 </div>

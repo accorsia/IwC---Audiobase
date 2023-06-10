@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Risultati - voti come migliore album</title>
+    <style>
+
+        a {
+            color: #00008BFF;
+            text-decoration: none;
+            border-bottom: none;
+        }
+
+        body {
+            font-family: Candara, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #8b0000;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #000;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .artist-box {
+            margin: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Risultati dei voti</h1>
+
+    {% for artist in artists %}
+        <div class="artist-box">
+            <h2>{{ artist.stagename }}</h2>
+            <ul>
+                {% for album in artist.album_set.all %}
+                    <li><a href="/ab/albums/{{ album.idb }}">{{ album.bname }}</a>: {{ album.best_album }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <br> <!-- endline between artists -->
+    {% endfor %}
+</body>
+</html>

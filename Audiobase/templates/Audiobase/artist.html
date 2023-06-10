@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 
+<!-- load my custom filter from external file -->
+{% load custom_filters %}
+
 <head>
     <title>Overview Artista</title>
     <style>
@@ -134,7 +137,7 @@
 
     <!-- profile pic -->
     <div class="artist-image">
-        <img src="/media/artist_img/a{{ artist.ida }}_{{ path_stagename }}.jpg" alt="artist profile pic">
+        <img src="/media/artist_img/a{{ artist.ida }}_{{ artist.stagename|convert_to_path }}.jpg" alt="artist profile pic">
     </div>
 
     <!-- datas -->

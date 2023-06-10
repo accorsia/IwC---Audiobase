@@ -15,6 +15,9 @@ urlpatterns = \
         #   localhost/ab/albums/idb
         path('albums/<int:album_id>', views.album_bio, name='album_bio'),
 
-        path('vote_album/', views.vote_album, name='vote_album'),
+        #   localhost/ab/vote_album
+        path('vote_album', views.vote_album, name='vote_album'),
 
+        #   localhost/ab/results
+        path('results', views.results, name='results')
     ]
