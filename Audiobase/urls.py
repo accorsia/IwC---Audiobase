@@ -1,7 +1,8 @@
 from django.urls import path
+
 from . import views
 
-app_name = 'ab' # namespace?
+app_name = 'ab'  # namespace?
 
 #   mapping URL <-> funzioni in 'views.py'
 urlpatterns = \

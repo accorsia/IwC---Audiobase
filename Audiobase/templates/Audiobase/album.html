@@ -127,10 +127,10 @@
 <div class="song-list">
     <h2 style="font-size: 36px;">Lista delle Canzoni</h2>
 
-    <ul>
+    <ul>    <!-- song list -->
         {% for song in songs %}
             <li>
-                <div class="song-box">
+                <div class="song-box">  <!-- box for each song -->
                     <h1>{{ song.sname }}</h1>
                     <ul>
                         <li><strong>Artista:</strong> {{ song.artist_name }}</li>

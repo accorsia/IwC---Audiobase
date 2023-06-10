@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- load my custom filter from external file -->
+<!-- load my custom filter from external file '\..\templatetags\custom_filters.py -->
 {% load custom_filters %}
 
 <head>
@@ -137,7 +137,8 @@
 
     <!-- profile pic -->
     <div class="artist-image">
-        <img src="/media/artist_img/a{{ artist.ida }}_{{ artist.stagename|convert_to_path }}.jpg" alt="artist profile pic">
+        <img src="/media/artist_img/a{{ artist.ida }}_{{ artist.stagename|convert_to_path }}.jpg"
+             alt="artist profile pic">
     </div>
 
     <!-- datas -->
@@ -150,7 +151,6 @@
         <p><strong>Album d'oro:</strong> {{ artist.n_gold }}</p>
         <p><strong>Album di platino:</strong> {{ artist.n_plat }}</p>
     </div>
-
 
 
 </div>
@@ -178,18 +178,15 @@
 </div>
 
 
-
-
-
 <!-- BOTTOM BOX: album list -->
 <div class="album-list">
     <h2>Album dell'artista</h2>
 
     <ul>
         {% for album in albums %}
-        <li><a href="{% url 'ab:album_bio' album.idb %}">{{ album.bname }}</a> ({{ album.year }})</li>
+            <li><a href="{% url 'ab:album_bio' album.idb %}">{{ album.bname }}</a> ({{ album.year }})</li>
         {% empty %}
-        <li class="no-albums">Nessun album disponibile</li>
+            <li class="no-albums">Nessun album disponibile</li>
         {% endfor %}
     </ul>
 

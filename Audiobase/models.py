@@ -1,6 +1,7 @@
-import os
 from datetime import date
+
 from django.db import models
+
 
 #   'a' ---> Artist
 class Artist(models.Model):
@@ -9,14 +10,13 @@ class Artist(models.Model):
     aname = models.CharField(max_length=100, verbose_name="Name")
     stagename = models.CharField(max_length=100, verbose_name="Stage name")
     birth = models.DateField("Birth")
-    age = models.IntegerField(default=0)    # read only
+    age = models.IntegerField(default=0)  # read only
     n_gold = models.IntegerField(default=0, verbose_name="Gold records")  # read only
     n_plat = models.IntegerField(default=0, verbose_name="Platinum records")  # read only
     nation = models.CharField(max_length=100, verbose_name="Nationality")
 
-    artist_image = models.ImageField(null=True, blank=True, upload_to="artist_img/")    # profile pic
+    artist_image = models.ImageField(null=True, blank=True, upload_to="artist_img/")  # profile pic
     show_ida = models.IntegerField(verbose_name="Ida", null=True, default=-1)
-
 
     #   [str] that shows in the dropdown menu
     def __str__(self):
@@ -24,7 +24,6 @@ class Artist(models.Model):
 
     def __repr__(self):
         return f"Artist(ida={self.ida}, aname='{self.aname}', stagename='{self.stagename}', birth={self.birth}, age={self.age}, n_gold={self.n_gold}, n_plat={self.n_plat}, nation='{self.nation}')"
-
 
     ####################################################################################################################
 
@@ -55,7 +54,8 @@ class Album(models.Model):
     idb = models.AutoField(primary_key=True)  # primary key
 
     ida = models.ForeignKey(Artist, on_delete=models.CASCADE)  # foreign key, read only
-    artist_name = models.CharField(max_length=100, verbose_name="Artist", default="Artist name will appear here...")    # read only
+    artist_name = models.CharField(max_length=100, verbose_name="Artist",
+                                   default="Artist name will appear here...")  # read only
     bname = models.CharField(max_length=100, verbose_name="Name")
     year = models.IntegerField(verbose_name="Release year")
     genre = models.CharField(max_length=100)
@@ -90,15 +90,18 @@ class Album(models.Model):
 
         super().save(*args, **kwargs)
 
+
 #   's' ---> Song
 class Song(models.Model):
     ids = models.AutoField(primary_key=True)  # primary key
 
     idb = models.ForeignKey(Album, on_delete=models.CASCADE)  # foreign key
     sname = models.CharField(max_length=100, verbose_name="Name")
-    artist_name = models.CharField(max_length=100, verbose_name="Artist", default="Artist name will appear here...")    # read only
-    album_name = models.CharField(max_length=100, verbose_name="Album", default="Album name will appear here...")   # read only
-    pubdate = models.IntegerField(verbose_name="Release year", default=0)   # read only
+    artist_name = models.CharField(max_length=100, verbose_name="Artist",
+                                   default="Artist name will appear here...")  # read only
+    album_name = models.CharField(max_length=100, verbose_name="Album",
+                                  default="Album name will appear here...")  # read only
+    pubdate = models.IntegerField(verbose_name="Release year", default=0)  # read only
     length = models.IntegerField(verbose_name="Length in [seconds]")
     spoty_str = models.IntegerField(verbose_name="Thousands of streams [x1000]")
 
@@ -122,4 +125,3 @@ class Song(models.Model):
         self.idb = album
 
         super().save(*args, **kwargs)
-

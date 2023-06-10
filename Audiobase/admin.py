@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Album, Artist, Song
 
 
@@ -12,7 +13,7 @@ class ArtistAdmin(admin.ModelAdmin):
         }),
         ('ReadOnly', {
             'fields': ('age', 'n_gold', 'n_plat', 'show_ida'),
-            #'classes': ('collapse',),
+            # 'classes': ('collapse',),
         }),
     )
 
@@ -26,7 +27,7 @@ class AlbumAdmin(admin.ModelAdmin):
         }),
         ('ReadOnly', {
             'fields': ('artist_name', 'show_idb', 'best_album'),
-            #'classes': ('collapse',),
+            # 'classes': ('collapse',),
         }),
     )
 
@@ -40,10 +41,9 @@ class SongAdmin(admin.ModelAdmin):
         }),
         ('ReadOnly', {
             'fields': ('artist_name', 'album_name', 'pubdate'),
-            #'classes': ('collapse',),
+            # 'classes': ('collapse',),
         }),
     )
-
 
 
 admin.site.register(Artist, ArtistAdmin)
@@ -52,4 +52,4 @@ admin.site.register(Album, AlbumAdmin)
 
 # admin.site.register(Album)
 # admin.site.register(Song)
-#admin.site.register(Artist)
+# admin.site.register(Artist)

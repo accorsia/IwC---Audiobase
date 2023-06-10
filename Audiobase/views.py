@@ -1,13 +1,13 @@
-from django.http import Http404, HttpResponseRedirect, HttpResponseBadRequest
-from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
 from django.contrib import messages
+from django.http import Http404, HttpResponseRedirect, HttpResponseBadRequest
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 
 from .models import Artist, Album
 
+
 # Create your views here.
 def index(request):
-
     #   Check database status
     try:
         artists_obj = Artist.objects.all()
@@ -57,11 +57,11 @@ def album_bio(request, album_id):
     }
     return render(request, 'Audiobase/album.html', context)
 
-def vote_album(request):
 
+def vote_album(request):
     if request.method == 'POST':
 
-        selected_album_id = request.POST.get('best_album')  #   album.idb
+        selected_album_id = request.POST.get('best_album')  # album.idb
         selected_album = get_object_or_404(Album, idb=selected_album_id)
 
         #   album database update
@@ -77,10 +77,10 @@ def vote_album(request):
     else:
         return HttpResponseBadRequest
 
-def results(request):
 
+def results(request):
     #   whole database
     albums = Album.objects.all()
     artists = Artist.objects.all()
 
-    return render(request, 'Audiobase/results.html', {'albums': albums, 'artists':artists})
+    return render(request, 'Audiobase/results.html', {'albums': albums, 'artists': artists})

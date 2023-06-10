@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
     <title>Risultati - voti come migliore album</title>
+
     <style>
 
         a {
@@ -51,21 +52,31 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
     </style>
+
 </head>
+
+
 <body>
-    <h1>Risultati dei voti</h1>
+<h1>Risultati dei voti</h1>
 
-    {% for artist in artists %}
-        <div class="artist-box">
-            <h2>{{ artist.stagename }}</h2>
-            <ul>
-                {% for album in artist.album_set.all %}
-                    <li><a href="/ab/albums/{{ album.idb }}">{{ album.bname }}</a>: {{ album.best_album }}</li>
-                {% endfor %}
-            </ul>
-        </div>
+<!-- artist list -->
+{% for artist in artists %}
 
-        <br> <!-- endline between artists -->
-    {% endfor %}
+    <div class="artist-box">    <!-- box for each artist -->
+
+        <h2>{{ artist.stagename }}</h2>
+        <ul>
+            <!-- artist's album -->
+            {% for album in artist.album_set.all %}
+                <li><a href="/ab/albums/{{ album.idb }}">{{ album.bname }}</a>: {{ album.best_album }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <br> <!-- endline between artists -->
+{% endfor %}
+
+
 </body>
 </html>

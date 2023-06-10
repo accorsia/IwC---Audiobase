@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('Audiobase', '0006_alter_song_length_alter_song_spoty_str'),
     ]

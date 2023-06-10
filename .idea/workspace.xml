@@ -4,9 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="results.html">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="enhanced results.html">
+      <change beforePath="$PROJECT_DIR$/Audiobase/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0002_alter_album_bname_alter_album_gold_alter_album_plat_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0002_alter_album_bname_alter_album_gold_alter_album_plat_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0003_alter_album_year.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0003_alter_album_year.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0004_alter_album_bname_alter_artist_aname_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0004_alter_album_bname_alter_artist_aname_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0005_alter_artist_birth_alter_song_length_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0005_alter_artist_birth_alter_song_length_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0006_alter_song_length_alter_song_spoty_str.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0006_alter_song_length_alter_song_spoty_str.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0007_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0007_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0008_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0008_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0009_remove_song_ida.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0009_remove_song_ida.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0010_song_album_name_song_artist_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0010_song_album_name_song_artist_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0011_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0011_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0012_remove_song_album_name_remove_song_artist_name_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0012_remove_song_album_name_remove_song_artist_name_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0013_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0013_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0014_song_album_name_song_artist_name_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0014_song_album_name_song_artist_name_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0015_alter_song_album_name_alter_song_artist_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0015_alter_song_album_name_alter_song_artist_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0016_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0016_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0017_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0017_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0018_alter_song_pubdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0018_alter_song_pubdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0019_album_artist_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0019_album_artist_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0020_artist_artist_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0020_artist_artist_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0021_artist_show_ida.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0021_artist_show_ida.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0022_alter_artist_show_ida.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0022_alter_artist_show_ida.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0023_alter_artist_show_ida.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0023_alter_artist_show_ida.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0024_alter_artist_show_ida.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0024_alter_artist_show_ida.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/migrations/0025_album_album_image_album_show_idb.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/migrations/0025_album_album_image_album_show_idb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/album.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templatetags/custom_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templatetags/custom_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +129,7 @@
       <workItem from="1685872744453" duration="14254000" />
       <workItem from="1686121369628" duration="22102000" />
       <workItem from="1686269720225" duration="12484000" />
-      <workItem from="1686321145051" duration="7620000" />
+      <workItem from="1686321145051" duration="8003000" />
     </task>
     <task id="LOCAL-00001" summary="3rd: admin + artist html">
       <created>1685886871357</created>
@@ -182,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686388912812</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="enhanced results.html">
+      <created>1686389890305</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686389890305</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +251,8 @@
     <MESSAGE value="working poll" />
     <MESSAGE value="admin interface 'voto registrato' alert" />
     <MESSAGE value="results.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="results.html" />
+    <MESSAGE value="enhanced results.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="enhanced results.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -220,11 +261,6 @@
           <url>file://$PROJECT_DIR$/Audiobase/views.py</url>
           <line>37</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Audiobase/models.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
