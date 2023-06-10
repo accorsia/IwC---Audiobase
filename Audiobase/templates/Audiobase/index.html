@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Audiobase - Presentazione</title>
+    <title>Home</title>
+
     <style>
         a {
             color: #00008BFF;
@@ -17,48 +19,77 @@
 
         h1 {
             color: #00008BFF;
-            font-size: 36px;
+            font-size: 48px;
             font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
         }
 
         h2 {
             color: #000;
             font-size: 28px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 30px;
+            text-align: center;
         }
 
         p {
             color: #000;
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         ul {
-            list-style-type: none;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            padding-left: 0;
+            list-style-type: disc;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding-left: 40px;
         }
 
         li {
             color: #000;
             font-size: 18px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .no-data {
             color: #999;
             font-style: italic;
         }
+
+        .results-link {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .results-link a {
+            color: #fff;
+            background-color: #00008BFF;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .results-link a:hover {
+            background-color: #00008B;
+        }
     </style>
+
 </head>
+
+
 <body>
     <h1>Benvenuti in Audiobase</h1>
-    <p>Questo è un progetto che si occupa di gestire dati relativi ad artisti, album e canzoni.</p>
+    <p>Audiobase è un progetto entusiasmante per la gestione di dati relativi ad artisti, album, canzoni e votazioni. Esplora, scopri e condividi la tua passione per la musica su questa piattaforma innovativa.</p>
 
+    <!-- TOP LIST: artists -->
     <h2>Artisti</h2>
-    <p>Nel database sono presenti i seguenti artisti:</p>
+    <p>Esplora il database degli artisti per scoprire i tuoi preferiti:</p>
+
     <ul>
         {% for artist in artists %}
             <li><a href="/ab/artists/{{ artist.ida }}">{{ artist.stagename }}</a></li>
@@ -67,8 +98,10 @@
         {% endfor %}
     </ul>
 
+    <!-- BOTTOM LIST: albums -->
     <h2>Album</h2>
-    <p>Nel database sono presenti i seguenti album:</p>
+    <p>Scopri gli album presenti nel database:</p>
+
     <ul>
         {% for album in albums %}
             <li><a href="/ab/albums/{{ album.idb }}">{{ album.bname }}</a> di {{ album.ida.stagename }}</li>
@@ -76,5 +109,11 @@
             <li class="no-data">Nessun album disponibile</li>
         {% endfor %}
     </ul>
+
+    <!-- Link to results.html -->
+    <div class="results-link">
+        <p>Visualizza i risultati delle votazioni <a href="/ab/results">qui</a></p>
+    </div>
+
 </body>
 </html>
