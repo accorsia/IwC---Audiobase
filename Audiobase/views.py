@@ -1,6 +1,7 @@
 from django.http import Http404, HttpResponseRedirect, HttpResponseBadRequest
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
+from django.contrib import messages
 
 from .models import Artist, Album
 
@@ -90,8 +91,12 @@ def vote_album(request):
         selected_album_id = request.POST.get('best_album')
         selected_album = get_object_or_404(Album, idb=selected_album_id)
 
+        #   album database update
         selected_album.best_album += 1
         selected_album.save()
+
+        #   success message
+        messages.success(request, "Voto registrato!")
 
         return HttpResponseRedirect(reverse('ab:album_bio', args=[selected_album_id]))
 
