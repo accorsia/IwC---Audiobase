@@ -1,4 +1,4 @@
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect, HttpResponseBadRequest
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
@@ -83,13 +83,18 @@ def album_bio(request, album_id):
                }
     return render(request, 'Audiobase/album.html', context)
 
-def vote_album(request, album_id):
+def vote_album(request):
 
     if request.method == 'POST':
-        selected_album_bname = request.POST.get('best_album')
-        #selected_album_idb = Album.objects.get(bname=selected_album_bname)
-        selected_album = get_object_or_404(Album, idb=album_id)
+
+        selected_album_id = request.POST.get('best_album')
+        selected_album = get_object_or_404(Album, idb=selected_album_id)
 
         selected_album.best_album += 1
         selected_album.save()
-    return HttpResponseRedirect(reverse('ab:album_bio', args=get_object_or_404(Album, idb=album_id).idb))
+
+        return HttpResponseRedirect(reverse('ab:album_bio', args=[selected_album_id]))
+
+    #   wrong method: GET
+    else:
+        return HttpResponseBadRequest
