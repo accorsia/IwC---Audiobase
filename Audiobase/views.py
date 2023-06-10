@@ -96,7 +96,7 @@ def vote_album(request):
         selected_album.save()
 
         #   success message
-        messages.success(request, "Voto registrato!")
+        messages.success(request, "Voto registrato bomber!")
 
         return HttpResponseRedirect(reverse('ab:album_bio', args=[selected_album_id]))
 
