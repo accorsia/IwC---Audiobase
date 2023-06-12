@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="reformat">
+    <list default="true" id="9e58bd73-a432-4cf9-b3e2-d856306d558d" name="Changes" comment="homepage button">
+      <change afterPath="$PROJECT_DIR$/explanation.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logical_db.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/artist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/templates/Audiobase/index_carousel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audiobase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audiobase/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +47,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aless/Desktop/UNI/Lezioni/2/B/Internet Web e Cloud/Project/Project/settings.py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.django.DjangoModulesConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/aless/Desktop/UNI/Lezioni/2/B/Internet Web e Cloud/Project/Project/settings.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.django.DjangoModulesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aless\Desktop\UNI\Lezioni\2\B\Internet Web e Cloud\Project\Audiobase" />
@@ -96,7 +107,8 @@
       <workItem from="1685872744453" duration="14254000" />
       <workItem from="1686121369628" duration="22102000" />
       <workItem from="1686269720225" duration="12484000" />
-      <workItem from="1686321145051" duration="9496000" />
+      <workItem from="1686321145051" duration="12487000" />
+      <workItem from="1686562155584" duration="8119000" />
     </task>
     <task id="LOCAL-00001" summary="3rd: admin + artist html">
       <created>1685886871357</created>
@@ -196,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686390358912</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="homepage button">
+      <created>1686394817867</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686394817867</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +233,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="3rd: admin + artist html" />
     <MESSAGE value="4th: both html" />
     <MESSAGE value="5th: completed html" />
@@ -227,7 +247,8 @@
     <MESSAGE value="results.html" />
     <MESSAGE value="enhanced results.html" />
     <MESSAGE value="reformat" />
-    <option name="LAST_COMMIT_MESSAGE" value="reformat" />
+    <MESSAGE value="homepage button" />
+    <option name="LAST_COMMIT_MESSAGE" value="homepage button" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project$main.coverage" NAME="main Coverage Results" MODIFIED="1685836623558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

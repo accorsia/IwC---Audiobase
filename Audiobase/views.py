@@ -6,7 +6,6 @@ from django.urls import reverse
 from .models import Artist, Album
 
 
-# Create your views here.
 def index(request):
     #   Check database status
     try:
@@ -64,7 +63,7 @@ def vote_album(request):
         selected_album_id = request.POST.get('best_album')  # album.idb
         selected_album = get_object_or_404(Album, idb=selected_album_id)
 
-        #   album database update
+        #   -- album database update --
         selected_album.best_album += 1
         selected_album.save()
 

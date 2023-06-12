@@ -39,8 +39,11 @@ class Artist(models.Model):
 
     #   Override ---> calculate read only fields
     def save(self, *args, **kwargs):
+
+        #   'n_gold', 'n_plat', 'age'
         self.update()
 
+        #   'show_ida'
         if self.ida is not None:
             self.show_ida = self.ida
         else:
@@ -72,17 +75,16 @@ class Album(models.Model):
 
     ####################################################################################################################
 
-    #   Override --> calculate: 'artist_name', 'ida'
+    #   Override
     def save(self, *args, **kwargs):
-        #   artist_name
+        #   'artist_name'
         artist = Artist.objects.get(ida=self.ida_id)
         self.artist_name = artist.stagename
 
-        #   ida
-        self.ida = artist
-        #   ...OPPURE...
-        #   self.ida_id = artist.ida
+        #   'ida'
+        self.ida = artist   #   ...OPPURE...    self.ida_id = artist.ida
 
+        #   'show_idb'
         if self.idb is not None:
             self.show_idb = self.idb
         else:
@@ -110,18 +112,18 @@ class Song(models.Model):
 
     ####################################################################################################################
 
-    #   Override --> calculate: 'album_name', 'pubdate', 'artist_name'
+    #   Override -->
     def save(self, *args, **kwargs):
-        #   album_name, pubdate
+        #   'album_name', 'pubdate'
         album = Album.objects.get(idb=self.idb_id)
         self.album_name = album.bname
         self.pubdate = album.year
 
-        #   artist_name
+        #   'artist_name'
         artist = Artist.objects.get(ida=album.ida_id)
         self.artist_name = artist.stagename
 
-        #   idb
+        #   'idb'
         self.idb = album
 
         super().save(*args, **kwargs)

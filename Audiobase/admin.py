@@ -12,7 +12,7 @@ class ArtistAdmin(admin.ModelAdmin):
             'fields': ('aname', 'stagename', 'birth', 'nation', 'artist_image'),
         }),
         ('ReadOnly', {
-            'fields': ('age', 'n_gold', 'n_plat', 'show_ida'),
+            'fields': readonly_fields,
             # 'classes': ('collapse',),
         }),
     )
@@ -26,7 +26,7 @@ class AlbumAdmin(admin.ModelAdmin):
             'fields': ('ida', 'bname', 'year', 'genre', 'gold', 'plat', 'album_image'),
         }),
         ('ReadOnly', {
-            'fields': ('artist_name', 'show_idb', 'best_album'),
+            'fields': readonly_fields,
             # 'classes': ('collapse',),
         }),
     )
@@ -40,7 +40,7 @@ class SongAdmin(admin.ModelAdmin):
             'fields': ('idb', 'sname', 'length', 'spoty_str'),
         }),
         ('ReadOnly', {
-            'fields': ('artist_name', 'album_name', 'pubdate'),
+            'fields': readonly_fields,
             # 'classes': ('collapse',),
         }),
     )

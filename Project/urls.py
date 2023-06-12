@@ -22,5 +22,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     #   BASEURL = 'localhost'
     path('admin/', admin.site.urls),
-    path('ab/', include('Audiobase.urls'))  #   ../ab=audiobase/
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   #   Automatically create url for uploaded images
+    path('ab/', include('Audiobase.urls'))  #   ab <---> audiobase
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   #   Create url for media files
